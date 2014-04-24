@@ -1,13 +1,12 @@
 <%= form_for @map,remote: true do |f| %>
 
     <div class="search-form-group">
-      <%= f.label :to %><br />
-      <%= f.text_field :to, placeholder: "Portland, OR", autofocus: true %>
+      <%= f.label :location %><br />
+      <%= f.text_field :location, placeholder: "e.g. Portland, OR", autofocus: true %>
     </div>
-     - or -
     <div class="search-form-group">
       <%= f.label :title %><br />
-      <%= f.text_field :title, placeholder: "Gone in 60 Seconds" %>
+      <%= f.text_field :title, placeholder: "e.g. Gone in 60 Seconds" %>
     </div>
 
     <div><%= f.submit "Search Locations" %></div>
