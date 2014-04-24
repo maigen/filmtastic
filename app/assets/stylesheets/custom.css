@@ -1,0 +1,22 @@
+body {
+  background: url(city.jpg) 0 0 no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  margin:0 auto;
+  width: 900px;
+}
+
+header h1 {
+  font-family: 'Kaushan Script', 'cursive';
+  font-size: 200px;
+  color: #FFF440;
+  margin-left: 25px;
+}
+
+.tagline h3 {
+  color: #FFF773;
+}
+
