@@ -88,6 +88,10 @@ header h1 {
   line-height: 15px;
 }
 
+.center_align {
+  text-align: center;
+}
+
 .form-button {
   margin: 0 auto;
   background: -webkit-linear-gradient(#FFF559, #BFB956);
@@ -105,7 +109,7 @@ header h1 {
 #search_results {
   position: relative;
   height: 300px;
-  display: none;
+  /*display: none;*/
 }
 
 #search_results #search_term span {
@@ -129,5 +133,8 @@ header h1 {
   line-height: 15px;
 }
 
+.results_list li a {
+  color: white;
+}
 
 
