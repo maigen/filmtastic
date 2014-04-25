@@ -1,0 +1,6 @@
+$('#oldmap').remove()
+$('#new_map input[type="text"]').each(function() {
+  $(this).val('')
+});
+$('#newmap').append('<%= j render "map" %>')
+

@@ -6,4 +6,5 @@
 
 * As a user, I can search by keywords and terms to find all locations related to a production.
 
+* As a user, I can search a movie title, which will scrape the IMDB page, and get all of the filming locations, plotting all of them onto the map.
 

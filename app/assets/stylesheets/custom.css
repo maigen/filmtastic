@@ -21,6 +21,7 @@ body {
   background: url(city.jpg) 0 0 no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  font-family: 'Lato', 'sans-serif';
 }
 
 .wrapper {
@@ -31,13 +32,16 @@ body {
 header h1 {
   font-family: 'Kaushan Script', 'cursive';
   font-size: 200px;
-  color: #FFF440;
+  /*color: #FFF440;*/
   margin-left: 25px;
-  line-height: 220px
+  line-height: 220px;
+  background: -webkit-linear-gradient(#FFF559, #B2AA1B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .tagline h3 {
-  color: #FFF773;
+  color: white;
   margin: 0 0 25px 0;
   padding-left: 25%;
 }

@@ -12,12 +12,33 @@
       <%= render 'maps/form' %>
     </div>
   </div>
-  <div class="large-8 columns">
-    <iframe
-      width="800"
-      height="650"
-      frameborder="1" style="border:1"
-      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=Portland,OR">
-    </iframe>
+  <div id="newmap" class="large-8 columns">
+    <!-- need to set up a default image/map in event that user does not allow geolocation -->
   </div>
+
+
 </div>
+
+
+<script type="text/javascript">
+
+
+  $(document).ready(function() {
+
+    function buildMap(lat, lon) {
+      $('#newmap').append('<iframe id="oldmap" width="800" height="650" frameborder="1" style="border:1" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+    };
+
+    function showPosition(position) {
+      lat = position.coords.latitude
+      lon = position.coords.longitude
+
+      buildMap(lat, lon)
+    };
+
+    navigator.geolocation.getCurrentPosition(showPosition);
+
+  });
+
+
+</script>
