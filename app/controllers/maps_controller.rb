@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
   def index
-    @map = Map.new(location: 'Hollywood, CA')
+    @map = Map.new
   end
 
   def create

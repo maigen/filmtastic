@@ -1,13 +1,20 @@
-<%= form_for @map, remote: true do |f| %>
+<div class="transparent"></div>
+<div class="opaque">
+  <%= form_for @map, remote: true do |f| %>
 
     <div class="search-form-group">
-      <%= f.label :location %><br />
+      <%= f.label :location, 'Search by location' %><br />
       <%= f.text_field :location, placeholder: "e.g. Portland, OR", autofocus: true %>
     </div>
     <div class="search-form-group">
-      <%= f.label :title %><br />
+      <%= f.label :title, 'Search by movie title' %><br />
       <%= f.text_field :title, placeholder: "e.g. Gone in 60 Seconds" %>
     </div>
 
-    <div><%= f.submit "Search Locations", class: "white button radius" %></div>
-<% end %>
+    <button class="form-button white button radius"><span>Search Locations</span></button>
+
+  <% end %>
+
+</div>
+
+

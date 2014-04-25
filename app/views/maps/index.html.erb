@@ -11,8 +11,19 @@
     <div class="search_form">
       <%= render 'maps/form' %>
     </div>
-  </div>
+    <div id="search_results">
+      <div class="transparent"></div>
+      <div class="opaque">
+        <div class="results_list">
+          <p id="search_term">Results for: <span>"<%= @map.location %>"</span></p>
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+      </div>
+    </div>
   <div id="newmap" class="large-8 columns">
+    <div id="loader"></div>
     <!-- need to set up a default image/map in event that user does not allow geolocation -->
   </div>
 
@@ -22,11 +33,11 @@
 
 <script type="text/javascript">
 
-
   $(document).ready(function() {
 
     function buildMap(lat, lon) {
-      $('#newmap').append('<iframe id="oldmap" width="800" height="650" frameborder="1" style="border:1" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+      $('#newmap').append('<iframe id="oldmap" width="800" height="650" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+      $('#loader').delay(200).fadeToggle('slow');
     };
 
     function showPosition(position) {
@@ -39,6 +50,5 @@
     navigator.geolocation.getCurrentPosition(showPosition);
 
   });
-
 
 </script>
