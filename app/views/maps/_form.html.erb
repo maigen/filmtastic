@@ -1,4 +1,6 @@
-<%= form_for @map, remote: true do |f| %>
+<div class="transparent"></div>
+<div class="opaque">
+  <%= form_for @map, remote: true do |f| %>
 
     <div class="form-group">
       <%= f.label :location %><br />
@@ -9,5 +11,13 @@
       <%= f.text_field :title, placeholder: "e.g. Gone in 60 Seconds" %>
     </div>
 
-    <div><%= f.submit "Search Locations", class: "white button radius" %></div>
-<% end %>
+    <div class="center_align">
+      <button class="form-button white button radius"><span>Search Locations</span></button>
+    </div>
+
+  <% end %>
+
+</div>
+
+
+
