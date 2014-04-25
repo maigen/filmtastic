@@ -32,6 +32,7 @@ body {
 header h1 {
   font-family: 'Kaushan Script', 'cursive';
   font-size: 200px;
+  text-align: center;
   /*color: #FFF440;*/
   margin-left: 25px;
   line-height: 220px;
@@ -109,6 +110,10 @@ header h1 {
   position: relative;
   height: 300px;
   /*display: none;*/
+}
+
+#search_term {
+  margin-bottom: 10px;
 }
 
 #search_results #search_term span {
