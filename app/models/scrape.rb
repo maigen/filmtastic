@@ -1,6 +1,5 @@
 class Scrape < ActiveRecord::Base
   require 'open-uri'
-  validates :name, presence: true
 
   def web_scrape(url)
       begin
