@@ -1,3 +1,11 @@
-<%= form_for Location.new do |f| %>
-  <%= f.submit "Seed", class: "button tiny" %>
+<div class="tagline">
+  <h3>Enter a new production location.</h3>
+</div>
+
+<%= render "form" %>
+
+<% if Location.all.length < 120 %>
+  <%= form_for Location.new, url: locations_seed_path do |f| %>
+    <%= f.submit "Seed", class: "button tiny" %>
+  <% end %>
 <% end %>
