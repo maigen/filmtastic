@@ -47,7 +47,6 @@ header h1 {
   font-style: italic;
 }
 
-<<<<<<< HEAD
 #loader {
   width: 800px;
   height: 650px;
@@ -78,15 +77,11 @@ header h1 {
   top: 0;
 }
 
-.search-form-group {
+.form-group {
   margin: 0 0 10px 0;
 }
 
-
-.search-form-group label {
-=======
 .form-group label {
->>>>>>> d444583d651cc98e9c627f1ec48cef5d15a39197
   color: #FFF773;
   font-size: 20px;
   line-height: 15px;

@@ -2,21 +2,12 @@
 <div class="opaque">
   <%= form_for @map, remote: true do |f| %>
 
-<<<<<<< HEAD
-    <div class="search-form-group">
-      <%= f.label :location, 'Search by location' %><br />
-      <%= f.text_field :location, placeholder: "e.g. Portland, OR", autofocus: true %>
-    </div>
-    <div class="search-form-group">
-      <%= f.label :title, 'Search by movie title' %><br />
-=======
     <div class="form-group">
       <%= f.label :location %><br />
       <%= f.text_field :location, placeholder: "e.g. Portland, OR", autofocus: true %>
     </div>
     <div class="form-group">
       <%= f.label :title %><br />
->>>>>>> d444583d651cc98e9c627f1ec48cef5d15a39197
       <%= f.text_field :title, placeholder: "e.g. Gone in 60 Seconds" %>
     </div>
 
@@ -27,5 +18,6 @@
   <% end %>
 
 </div>
+
 
 
