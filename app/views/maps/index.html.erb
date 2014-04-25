@@ -1,19 +1,36 @@
-<header>
-  <h1>Filmtastic!</h1>
-</header>
 <div class="tagline">
   <h3>Find where your favorite production has filmed!</h3>
 </div>
 
 
+
 <div class="row">
+
   <div class="large-4 columns">
     <div class="search_form">
       <%= render 'maps/form' %>
     </div>
+    <div id="search_results">
+      <div class="transparent"></div>
+      <div class="opaque">
+        <div class="results_list">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <!-- <p id="search_term">Results for: <span>"<%= @map.location %>"</span></p> -->
+
+          <p id="search_term">Recent entries:</p>
+          <ul>
+            <% @locations.each do |location| %>
+              <li><a href="javascript:void(0);" onclick="showAddress('<%= location.address.chomp.gsub('%2','+') %>')"><%= location.title %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div id="newmap" class="large-8 columns">
-    <!-- need to set up a default image/map in event that user does not allow geolocation -->
+    <div id="loader"></div>
   </div>
 
 
@@ -22,11 +39,13 @@
 
 <script type="text/javascript">
 
-
   $(document).ready(function() {
 
     function buildMap(lat, lon) {
-      $('#newmap').append('<iframe id="oldmap" width="800" height="650" frameborder="1" style="border:1" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+      $('#newmap').append('<iframe id="mapcanvas" width="800" height="650" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+      $('#loader').delay(200).fadeToggle('slow');
+
+
     };
 
     function showPosition(position) {
@@ -39,6 +58,5 @@
     navigator.geolocation.getCurrentPosition(showPosition);
 
   });
-
 
 </script>

@@ -1,10 +1,10 @@
 class MapsController < ApplicationController
   def index
-    @map = Map.new(location: 'Hollywood, CA')
+    @map = Map.new
+    @locations = Location.all[1..10]
   end
 
   def create
-
     @map = Map.new(map_params)
     if @map.save
       respond_to do |format|
