@@ -1,0 +1,13 @@
+<%= form_for @location do |f| %>
+
+<div class="form-group">
+  <%= f.label "Movie Title" %><br />
+  <%= f.text_field :title %>
+</div>
+<div class="form-group">
+  <%= f.label "Location" %><br />
+  <%= f.text_field :address %>
+</div>
+
+<button class="form-button white button radius"><span>Add Location</span></button>
+<% end %>
