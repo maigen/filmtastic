@@ -12,7 +12,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'foundation-rails'
 gem 'devise'
 gem 'nokogiri'
-
+gem 'geocoder'
 
 
 gem 'spring',        group: :development
@@ -31,7 +31,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
-    gem 'capybara'
+  gem 'capybara'
 end
 
 group :production do
