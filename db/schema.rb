@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140424184656) do
+=======
+ActiveRecord::Schema.define(version: 20140425172325) do
+>>>>>>> a1a860b60e3b821f8874b66d2b1f065eb6a4fa5c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "locations", force: true do |t|
+    t.string "title"
+    t.string "address"
+  end
 
   create_table "maps", force: true do |t|
     t.string   "location"
