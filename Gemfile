@@ -12,7 +12,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'foundation-rails'
 gem 'devise'
 gem 'nokogiri'
-gem 'turbolinks'
+
 
 
 gem 'spring',        group: :development
@@ -34,7 +34,9 @@ group :test do
     gem 'capybara'
 end
 
-
+group :production do
+  gem 'rails_12factor'
+end
 
 
 
