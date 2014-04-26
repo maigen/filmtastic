@@ -42,7 +42,7 @@
   $(document).ready(function() {
 
     function buildMap(lat, lon) {
-      $('#newmap').append('<iframe id="mapcanvas" width="800" height="650" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+      $('#newmap').append('<iframe id="map_canvas" width="800" height="650" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
       $('#loader').delay(200).fadeToggle('slow');
 
 
