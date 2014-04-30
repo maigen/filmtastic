@@ -1,15 +1,12 @@
 <div class="transparent"></div>
 <div class="opaque">
-  <%= form_for @map, remote: true do |f| %>
+  <%= form_for @map do |f| %>
 
     <div class="form-group">
       <%= f.label :location %><br />
       <%= f.text_field :location, placeholder: "e.g. Portland, OR", autofocus: true %>
     </div>
-    <div class="form-group">
-      <%= f.label :title %><br />
-      <%= f.text_field :title, placeholder: "e.g. Gone in 60 Seconds" %>
-    </div>
+
 
     <div class="center_align">
       <button class="form-button white button radius"><span>Search Locations</span></button>
