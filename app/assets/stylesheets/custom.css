@@ -108,7 +108,7 @@ header h1 {
 
 #search_results {
   position: relative;
-  height: 300px;
+  height: 390px;
   /*display: none;*/
 }
 
@@ -139,6 +139,11 @@ header h1 {
 
 .results_list li a {
   color: white;
+}
+
+#map {
+  width: 800px;
+  height: 650px;
 }
 
 
