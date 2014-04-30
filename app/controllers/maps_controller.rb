@@ -11,6 +11,7 @@ class MapsController < ApplicationController
   end
 
   def create
+    # Gmaps4rails.clear_markers
     @map = Map.new(map_params)
     if @map.save
       respond_to do |format|
