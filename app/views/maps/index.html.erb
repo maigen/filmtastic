@@ -21,7 +21,7 @@
           <p id="search_term">Recent entries:</p>
           <ul>
             <% @locations.each do |location| %>
-              <li><a href="javascript:void(0);" onclick="showAddress('<%= location.address.chomp.gsub('%2','+') %>')"><%= location.title %></a></li>
+              <li><a href="javascript:void(0);" data-lat="<%= location.latitude %>" data-lon="<%= location.longitude %>" data-movtitle="<%= location.title %>"><%= location.title %></a></li>
             <% end %>
           </ul>
         </div>
@@ -42,23 +42,34 @@
 
   $(document).ready(function() {
 
+    $('.results_list li a').on('click', function() {
+      lat = $(this).data('lat');
+      lon = $(this).data('lon');
+      movTitle = $(this).data('movtitle');
+
+      var handler = Gmaps.build('Google');
+      handler.buildMap({
+         internal: {id: 'map'},
+         provider: {
+           zoom:      15,
+           center:    new google.maps.LatLng(lat, lon),
+           // style: mapStyle,
+           mapTypeId: google.maps.MapTypeId.ROADMAP
+         }
+       },
+       function(){ }
+      );
+    });
+
+
+
+
 
     function buildMap(lat, lon) {
 
       handler = Gmaps.build('Google');
       handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarkers([
-          {
-            "lat": lat,
-            "lng": lon,
-            "picture": {
-              "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-              "width":  36,
-              "height": 36
-            },
-            "infowindow": "hello!"
-          }
-        ]);
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });

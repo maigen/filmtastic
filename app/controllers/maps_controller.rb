@@ -2,6 +2,12 @@ class MapsController < ApplicationController
   def index
     @map = Map.new
     @locations = Location.all[31..40]
+
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+      marker.lat location.latitude
+      marker.lng location.longitude
+      marker.infowindow location.title
+    end
   end
 
   def create
