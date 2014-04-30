@@ -31,6 +31,7 @@
 
   <div id="newmap" class="large-8 columns">
     <div id="loader"></div>
+    <div id="map"></div>
   </div>
 
 
@@ -41,12 +42,30 @@
 
   $(document).ready(function() {
 
+
     function buildMap(lat, lon) {
-      $('#newmap').append('<iframe id="map_canvas" width="800" height="650" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOrWdN-Ob7lti6iBQrbf9ThMqZO2X8dn0&q=' + lat + ', ' + lon + '"></iframe>');
+
+      handler = Gmaps.build('Google');
+      handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+        markers = handler.addMarkers([
+          {
+            "lat": lat,
+            "lng": lon,
+            "picture": {
+              "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+              "width":  36,
+              "height": 36
+            },
+            "infowindow": "hello!"
+          }
+        ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+
       $('#loader').delay(200).fadeToggle('slow');
-
-
     };
+
 
     function showPosition(position) {
       lat = position.coords.latitude
@@ -58,5 +77,6 @@
     navigator.geolocation.getCurrentPosition(showPosition);
 
   });
+
 
 </script>

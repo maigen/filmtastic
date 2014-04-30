@@ -12,10 +12,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'foundation-rails'
 gem 'devise'
 gem 'nokogiri'
+
 gem 'geocoder'
-
-
-gem 'spring',        group: :development
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 
 group :development do
@@ -23,10 +23,12 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'letter_opener'
+  gem 'spring'
 end
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do

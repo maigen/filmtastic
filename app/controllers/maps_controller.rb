@@ -1,7 +1,7 @@
 class MapsController < ApplicationController
   def index
     @map = Map.new
-    @locations = Location.all[1..10]
+    @locations = Location.all[31..40]
   end
 
   def create
