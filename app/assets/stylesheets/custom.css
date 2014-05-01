@@ -25,7 +25,7 @@ body {
 }
 
 .wrapper {
-  margin:20px auto;
+  margin:0 auto 20px auto;
   width: 1000px;
 }
 
@@ -34,8 +34,8 @@ header h1 {
   font-size: 200px;
   text-align: center;
   /*color: #FFF440;*/
-  margin-left: 25px;
-  line-height: 220px;
+  margin: 25px 0 0 0;
+  line-height: 200px;
   background: -webkit-linear-gradient(#FFF559, #BFB956);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -108,8 +108,12 @@ header h1 {
 
 #search_results {
   position: relative;
-  height: 300px;
-  /*display: none;*/
+  height: 390px;
+}
+
+#search_results li {
+  height: 26px;
+  overflow: hidden;
 }
 
 #search_term {
@@ -139,6 +143,11 @@ header h1 {
 
 .results_list li a {
   color: white;
+}
+
+#map {
+  width: 800px;
+  height: 650px;
 }
 
 
