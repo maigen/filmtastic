@@ -109,7 +109,11 @@ header h1 {
 #search_results {
   position: relative;
   height: 390px;
-  /*display: none;*/
+}
+
+#search_results li {
+  height: 26px;
+  overflow: hidden;
 }
 
 #search_term {
