@@ -18,7 +18,7 @@
           <p class="alert"><%= alert %></p>
           <!-- <p id="search_term">Results for: <span>"<%= @map.location %>"</span></p> -->
 
-          <p id="search_term">Recent entries:</p>
+          <p id="search_term">Recent results:</p>
           <ul>
             <% @locations.each do |location| %>
               <li><a href="javascript:void(0);" data-lat="<%= location.latitude %>" data-lon="<%= location.longitude %>" data-movtitle="<%= location.title %>"><%= location.title %></a></li>

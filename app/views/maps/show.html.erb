@@ -1,4 +1,4 @@
-
+<header> hello</header>
 
 <div class="tagline">
   <h3>Find where your favorite production has filmed!</h3>
@@ -20,7 +20,7 @@
           <p class="alert"><%= alert %></p>
           <!-- <p id="search_term">Results for: <span>"<%= @map.location %>"</span></p> -->
 
-          <p id="search_term">Recent entries:</p>
+          <p id="search_term">Recent results:</p>
           <ul>
             <% @locations.each do |location| %>
               <li><a href="javascript:void(0);" data-lat="<%= location.latitude %>" data-lon="<%= location.longitude %>" data-movtitle="<%= location.title %>"><%= location.title %></a></li>
@@ -77,14 +77,15 @@
 
       handler = Gmaps.build('Google');
       handler.buildMap({
-        zoom: 8,
         provider: {
           styles: mapStyle
         },
         internal: {id: 'map'}}, function(){
         markers = handler.addMarkers(<%= raw @nearby_hash.to_json %>);
+
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
+        handler.getMap().setZoom(16)
       });
 
       $('#loader').delay(200).fadeToggle('slow');

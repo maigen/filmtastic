@@ -1,7 +1,8 @@
 class MapsController < ApplicationController
   def show
     @map = Map.find(params[:id])
-    @locations = Location.all[31..40]
+    rando = (1...Location.all.length - 10).to_a.sample
+    @locations = Location.all[rando..rando + 10]
     @nearby_locations = Location.near(@map.location)
     @nearby_hash = Gmaps4rails.build_markers(@nearby_locations) do |location, marker|
       marker.lat location.latitude
@@ -12,7 +13,8 @@ class MapsController < ApplicationController
 
   def index
     @map = Map.new
-    @locations = Location.all[31..40]
+    rando = (1...Location.all.length - 10).to_a.sample
+    @locations = Location.all[rando..rando + 10]
 
     @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
       marker.lat location.latitude
